@@ -1,44 +1,38 @@
 # Bike Basket Adapter Plate
 
-A parametric OpenSCAD replacement for the basket-side plate of a quick-release
-bike basket mount — the part that screws to the basket and clips onto the
-bracket bolted to the bike.
+OpenSCAD model of the basket-side mounting plate for a Bontrager Interchange
+handlebar basket. This is the plate that screws to the basket and clips onto
+the bracket on the bike.
 
 ![Isometric view](images/iso.png)
 
-## What this fits
+## What it fits
 
-Modelled from the plate on a [Bontrager Interchange Handlebar
-Basket](https://www.trekbikes.com/us/en_US/equipment/bike-accessories/bike-baskets/bontrager-interchange-handlebar-basket/p/25614/),
-part of Bontrager's Interchange quick-release system. The bike-side bracket is
-moulded with Japanese and German patent numbers, a Sunny Wheel Industrial
-licence notice, and a 5 kg load rating — so other baskets built on the same
-licensed mount likely share this geometry, whatever the badge on them says.
+The [Bontrager Interchange Handlebar
+Basket](https://www.trekbikes.com/us/en_US/equipment/bike-accessories/bike-baskets/bontrager-interchange-handlebar-basket/p/25614/).
+The bike-side bracket carries Japanese and German patent numbers, a Sunny Wheel
+Industrial licence notice and a 5 kg rating, so baskets sold under other brands
+on the same licensed mount may use this geometry too.
 
-This model replaces **only the basket-side plate**. The bike-side bracket, with
-its spring-loaded release lever, is unchanged and must still be in working
-order.
+This replaces the basket plate only. The bracket on the bike and its spring
+lever need to be intact.
 
-It was reverse-engineered with calipers from a single broken plate, and
-Bontrager has shipped several basket revisions. **Check the key dimensions
-below against your own part before printing.**
+Dimensions came off one plate. Check them against yours before printing.
 
 ## How it mounts
 
-Four countersunk screws hold the plate to the basket. To mount the basket, the
-plate drops onto the bike-side bracket: the bracket's tongue slides into the
-slot formed between the overhanging wings and the plate floor, guided by the
-central channel. The bracket's spring lever rides up the ramped latch in that
-channel and drops behind it, locking the basket on.
+Four countersunk screws hold the plate to the basket. The basket then drops
+onto the bike-side bracket: the bracket's tongue slides into the slot between
+the wings and the plate floor, guided by the central channel, and the spring
+lever rides up the ramped latch and drops in behind it.
 
-To release, reach through the scoop in the top wall and press the lever on the
-bike-side bracket.
+To release, press the lever through the scoop in the top wall.
 
 ![Top view](images/top.png)
 
-## Key dimensions
+## Dimensions
 
-All heights are absolute, measured from the flat underside of the part.
+Heights are measured from the flat underside.
 
 | Feature | Value |
 |---|---|
@@ -54,50 +48,36 @@ All heights are absolute, measured from the flat underside of the part.
 | Latch ramp start | 45.5 mm from the bottom edge |
 | Wings | 21.6 mm long, 5.8 mm overhang, 2 mm thick |
 
-The original plate measured 105 mm wide. This model is 106 mm: the side walls
-are pushed out 0.5 mm each because a test print gripped the bracket too
-tightly. Set `wall_relief = 0` to return to the measured original.
+The original plate is 105 mm wide. This one is 106 mm, which puts 0.5 mm of
+clearance on each side wall and wing. Set `wall_relief = 0` for the original
+width.
 
 ![Half section through the channel](images/section.png)
 
 ## Building
 
-Requires [OpenSCAD](https://openscad.org/). A pre-built `basket_adapter_plate.stl`
-is included; to regenerate it after changing parameters:
+Needs [OpenSCAD](https://openscad.org/). A built `basket_adapter_plate.stl` is
+included. To regenerate it:
 
 ```
 openscad -o basket_adapter_plate.stl basket_adapter_plate.scad
 ```
 
-Every dimension is a named parameter at the top of `basket_adapter_plate.scad`.
-Derived values are computed from the measured ones, so changing the channel
-width or wall relief moves the wings, slots and screw bosses to match rather
-than leaving them stranded.
-
-Parameters marked `not measured` in the source are estimates from photographs —
-the corner radius, the top wall width, and the finger scoop, none of which
-affect how the part latches.
+Every dimension is a named parameter at the top of the .scad file. A few are
+marked `not measured` in the source — corner radius, top wall width, finger
+scoop — and none of them affect how the plate latches.
 
 ## Printing
 
-Print flat on the underside, which is the largest flat face and puts every
-functional surface in a sensible orientation.
+Print flat on the underside.
 
-- **Supports:** the wings cantilever 5.8 mm inward over a 4 mm gap and want
-  support underneath. Nothing else does.
-- **Bridging:** the slots through the top wall bridge 12 mm across their tops
-  and print fine unsupported.
-- **Material:** print in something with reasonable toughness. The original is
-  injection-moulded and the plate carries the full load of the basket; PLA will
-  work for a test fit but PETG, ABS or ASA is a better choice for actual riding.
-- The mount is rated for 5 kg. A printed part is not guaranteed to match the
-  original's strength — load it conservatively and check it periodically.
+The wings cantilever 5.8 mm over a 4 mm gap and need support. The slots through
+the top wall bridge 12 mm and print fine without.
 
-## Status
-
-Printed and test-fitted. The current revision corrects the side wall spacing
-and relieves the wing pinch found on the first print.
+PLA is fine for checking fit. Use PETG or ABS for something you'll actually
+ride with. The mount is rated for 5 kg, and a printed plate won't match the
+moulded original, so leave some margin.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT
