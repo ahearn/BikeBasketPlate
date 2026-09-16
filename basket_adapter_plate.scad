@@ -16,11 +16,13 @@ rim_z           = 17;    // top of raised perimeter wall
 latch_top_z     = 11;    // flush with main surface
 tab_top_z       = 17;    // flush with rim
 
-// ---- Perimeter rim (top, left, right only — bottom edge is open) ----
-rim_width = 10;    // not measured
-
 // ---- Center channel (open through the bottom edge) ----
 channel_w = 32;
+
+// ---- Perimeter rim (top, left, right only — bottom edge is open) ----
+channel_to_wall = 30.5;  // measured: channel edge to the side wall's inner face
+rim_w_side = plate_w / 2 - channel_w / 2 - channel_to_wall;
+rim_w_top  = 10;         // not measured
 
 // ---- Latch bump: ramp faces the bottom edge so the lever rides up it ----
 latch_ramp_run = 8.8;   // slope run along the channel
@@ -76,15 +78,15 @@ module rim() {
             difference() {
                 rounded_rect(plate_w, plate_h, corner_r);
                 // void shifted down so the rim covers top/left/right but not bottom
-                translate([0, -rim_width])
-                    square([plate_w - 2 * rim_width, plate_h], center = true);
+                translate([0, -rim_w_top])
+                    square([plate_w - 2 * rim_w_side, plate_h], center = true);
             }
 }
 
 module channel_cut() {
     depth = main_surface_z - channel_floor_z;
     translate([-channel_w / 2, -plate_h / 2 - 1, channel_floor_z])
-        cube([channel_w, plate_h + 1 - rim_width, rim_z - channel_floor_z + 1]);
+        cube([channel_w, plate_h + 1 - rim_w_top, rim_z - channel_floor_z + 1]);
 }
 
 module latch() {
@@ -105,7 +107,7 @@ module finger_scoop() {
     r = (pow(scoop_width / 2, 2) + pow(scoop_depth, 2)) / (2 * scoop_depth);
     // pushed out past the top edge so a scoop_edge_wall-thick rib survives
     // between the scoop and the channel opening
-    y = plate_h / 2 - rim_width + scoop_edge_wall + scoop_width / 2;
+    y = plate_h / 2 - rim_w_top + scoop_edge_wall + scoop_width / 2;
     translate([0, y, rim_z + r - scoop_depth])
         sphere(r = r, $fn = 120);
 }
@@ -115,8 +117,8 @@ module wall_slots() {
     for (side = [-1, 1]) {
         x0 = (side > 0) ? channel_w / 2 + slot_gap
                         : -channel_w / 2 - slot_gap - slot_w;
-        translate([x0, plate_h / 2 - rim_width - 1, z0])
-            cube([slot_w, rim_width + 2, slot_h]);
+        translate([x0, plate_h / 2 - rim_w_top - 1, z0])
+            cube([slot_w, rim_w_top + 2, slot_h]);
     }
 }
 
@@ -134,7 +136,7 @@ module screw_holes() {
 }
 
 module hook_tab(side) {
-    inner_face = plate_w / 2 - rim_width;
+    inner_face = plate_w / 2 - rim_w_side;
     x0 = (side > 0) ? inner_face - tab_overhang : -inner_face;
     translate([x0, plate_h / 2 - tab_len, tab_top_z - tab_thickness])
         cube([tab_overhang, tab_len, tab_thickness]);
