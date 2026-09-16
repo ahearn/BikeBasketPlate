@@ -36,19 +36,19 @@ Heights are measured from the flat underside.
 
 | Feature | Value |
 |---|---|
-| Overall | 106 × 77.7 mm |
+| Overall | 107 × 77.7 mm |
 | Main surface (screw-hole floor) | 11 mm |
 | Channel floor | 7.4 mm |
 | Perimeter wall / wing tops | 17 mm |
 | Central channel width | 32 mm |
-| Channel edge to side wall | 31 mm each side |
+| Channel edge to side wall | 31.5 mm each side |
 | Screw holes | 10.1 mm counterbore, 5.4 mm shaft, through |
 | Screw hole centres | 46.1 mm across × 44.9 mm down |
 | Latch | 8.8 mm ramp + 3.4 mm flat, top flush at 11 mm |
 | Latch ramp start | 45.5 mm from the bottom edge |
 | Wings | 21.6 mm long, 5.8 mm overhang, 2 mm thick |
 
-The original plate is 105 mm wide. This one is 106 mm, which puts 0.5 mm of
+The original plate is 105 mm wide. This one is 107 mm, which puts 1 mm of
 clearance on each side wall and wing. Set `wall_relief = 0` for the original
 width.
 

@@ -6,7 +6,7 @@
 
 // ---- Overall plate ----
 plate_w_nominal = 105;   // as measured on the original
-wall_relief     = 0.5;   // side walls pushed out for fit; wings follow them
+wall_relief     = 1.0;   // side walls pushed out for fit; wings follow them
 plate_w  = plate_w_nominal + 2 * wall_relief;
 plate_h  = 77.7;
 corner_r = 6;      // not measured
