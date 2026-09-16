@@ -92,3 +92,7 @@ functional surface in a sensible orientation.
 
 Printed and test-fitted. The current revision corrects the side wall spacing
 and relieves the wing pinch found on the first print.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
