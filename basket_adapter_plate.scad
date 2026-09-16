@@ -5,7 +5,9 @@
 // All Z heights are absolute, measured from the flat underside of the part.
 
 // ---- Overall plate ----
-plate_w  = 105;
+plate_w_nominal = 105;   // as measured on the original
+wall_relief     = 0.5;   // side walls pushed out for fit; wings follow them
+plate_w  = plate_w_nominal + 2 * wall_relief;
 plate_h  = 77.7;
 corner_r = 6;      // not measured
 
@@ -20,7 +22,7 @@ tab_top_z       = 17;    // flush with rim
 channel_w = 32;
 
 // ---- Perimeter rim (top, left, right only — bottom edge is open) ----
-channel_to_wall = 30.5;  // measured: channel edge to the side wall's inner face
+channel_to_wall = 30.5 + wall_relief;  // measured 30.5, plus the fit relief
 rim_w_side = plate_w / 2 - channel_w / 2 - channel_to_wall;
 rim_w_top  = 10;         // not measured
 
