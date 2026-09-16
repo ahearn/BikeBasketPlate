@@ -8,14 +8,19 @@ bracket bolted to the bike.
 
 ## What this fits
 
-The mount is a two-piece quick-release system licensed by Sunny Wheel
-Industrial (the bike-side bracket is moulded with Japanese and German patent
-numbers and a 5 kg load rating). This model replaces **only the basket-side
-plate**. The bike-side bracket, with its spring-loaded release lever, is
-unchanged and must still be in working order.
+Modelled from the plate on a [Bontrager Interchange Handlebar
+Basket](https://www.trekbikes.com/us/en_US/equipment/bike-accessories/bike-baskets/bontrager-interchange-handlebar-basket/p/25614/),
+part of Bontrager's Interchange quick-release system. The bike-side bracket is
+moulded with Japanese and German patent numbers, a Sunny Wheel Industrial
+licence notice, and a 5 kg load rating — so other baskets built on the same
+licensed mount likely share this geometry, whatever the badge on them says.
 
-The model was reverse-engineered with calipers from a single broken plate.
-Other baskets in the same family may differ, so **check the key dimensions
+This model replaces **only the basket-side plate**. The bike-side bracket, with
+its spring-loaded release lever, is unchanged and must still be in working
+order.
+
+It was reverse-engineered with calipers from a single broken plate, and
+Bontrager has shipped several basket revisions. **Check the key dimensions
 below against your own part before printing.**
 
 ## How it mounts
