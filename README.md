@@ -45,7 +45,7 @@ Heights are measured from the flat underside.
 | Screw holes | 10.1 mm counterbore, 5.4 mm shaft, through |
 | Screw hole centres | 46.1 mm across × 44.9 mm down |
 | Latch | 8.8 mm ramp + 3.4 mm flat, top flush at 11 mm |
-| Latch ramp start | 45.5 mm from the bottom edge |
+| Latch position | catch face 18 mm from the top wall |
 | Wings | 21.6 mm long, 5.8 mm overhang, 2 mm thick |
 
 The original plate is 105 mm wide. This one is 107 mm, which puts 1 mm of

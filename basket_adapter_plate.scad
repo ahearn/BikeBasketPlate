@@ -30,7 +30,7 @@ rim_w_top  = 10;         // not measured
 latch_ramp_run = 8.8;   // slope run along the channel
 latch_flat_run = 3.4;   // flat top run along the channel
 latch_w        = channel_w;
-latch_bottom_from_edge = 45.5;  // ramp start, measured from the plate's bottom edge
+latch_to_top_wall = 18;  // catch face to the top wall's inner face
 
 // ---- Screw holes (countersunk, through) ----
 cbore_d     = 10.1;
@@ -93,7 +93,8 @@ module channel_cut() {
 
 module latch() {
     rise = latch_top_z - channel_floor_z;
-    y0 = -plate_h / 2 + latch_bottom_from_edge;
+    y_catch = plate_h / 2 - rim_w_top - latch_to_top_wall;
+    y0 = y_catch - (latch_ramp_run + latch_flat_run);
     translate([0, y0, channel_floor_z])
         rotate([90, 0, 90])
             linear_extrude(height = latch_w, center = true)
